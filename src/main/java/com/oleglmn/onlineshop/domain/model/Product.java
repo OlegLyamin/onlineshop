@@ -9,7 +9,6 @@ import javax.persistence.Table;
 @Table(name = "product")
 public class Product {
     @Id
-    @GeneratedValue
     private Long id;
     private String title;
 

@@ -24,7 +24,15 @@ public class ProductService {
     }
 
     public Product putProductById(Long productId, Product product) {
-        product.setId(productId);
-        return productRepository.save(product);
+        Optional<Product> optionalProductById = productRepository.findById(productId);
+        if (optionalProductById.isEmpty()) {
+            product.setId(productId);
+            return productRepository.save(product);
+        }
+
+        Product product1 = optionalProductById.get();
+        product1.setTitle(product.getTitle());
+
+        return productRepository.save(product1);
     }
 }
