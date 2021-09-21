@@ -58,7 +58,7 @@ public class OrderService {
 
     private void sendMessageToSqs(CartDto cartDto) {
         SendMessageRequest sendMsgRequest = new SendMessageRequest()
-            .withQueueUrl("https://sqs.eu-central-1.amazonaws.com/076837623726/onlineshop-checkout")
+            .withQueueUrl("sqs-url-here")
             .withMessageBody(cartDto.toString())
             .withDelaySeconds(5);
         sqs.sendMessage(sendMsgRequest);
