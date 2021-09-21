@@ -1,0 +1,42 @@
+{
+  "SamplingRuleRecords": [
+    {
+      "ModifiedAt": 1631967688.0,
+      "SamplingRule": {
+        "ReservoirSize": 10,
+        "ServiceType": "AWS::EC2::Instance",
+        "RuleARN": "arn:aws:xray:eu-central-1:076837623726:sampling-rule/putproduct",
+        "Version": 1,
+        "HTTPMethod": "PUT",
+        "URLPath": "/product/{cartId}/add",
+        "Host": "ec2-18-194-53-55.eu-central-1.compute.amazonaws.com",
+        "Priority": 1,
+        "FixedRate": 0.05,
+        "ResourceARN": "arn:aws:ec2:eu-central-1:076837623726:instance/i-0ca228ff205914912",
+        "ServiceName": "product",
+        "RuleName": "putproduct",
+        "Attributes": {}
+      },
+      "CreatedAt": 1631959684.0
+    },
+    {
+      "ModifiedAt": 0.0,
+      "SamplingRule": {
+        "ReservoirSize": 1,
+        "ServiceType": "*",
+        "RuleARN": "arn:aws:xray:eu-central-1:076837623726:sampling-rule/Default",
+        "Version": 1,
+        "HTTPMethod": "*",
+        "URLPath": "*",
+        "Host": "*",
+        "Priority": 10000,
+        "FixedRate": 0.05,
+        "ResourceARN": "*",
+        "ServiceName": "*",
+        "RuleName": "Default",
+        "Attributes": {}
+      },
+      "CreatedAt": 0.0
+    }
+  ]
+}

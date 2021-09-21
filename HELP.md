@@ -33,3 +33,20 @@ kubectl run onlineshop --image=onlineshop:0.0.1 --image-pull-policy=Never
 minikube kubectl -- delete pod onlineshop
 minikube kubectl -- delete service onlineshop
 minikube kubectl -- delete deployment onlineshop
+
+
+from __future__ import print_function
+import boto3
+import json
+
+
+def lambda_handler(event, context):
+client = boto3.client('sns')
+for record in event['Records']:
+payload = record["body"]
+print(str(payload))
+response = client.publish(
+TopicArn='sns arn here',
+Message=json.dumps({'default': str(payload)}),
+MessageStructure='json'
+)

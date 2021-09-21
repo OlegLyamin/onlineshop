@@ -1,5 +1,6 @@
 package com.oleglmn.onlineshop.web.rest;
 
+import com.amazonaws.xray.spring.aop.XRayEnabled;
 import com.oleglmn.onlineshop.domain.model.Product;
 import com.oleglmn.onlineshop.service.ProductService;
 import org.springframework.http.ResponseEntity;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/product/")
+@XRayEnabled
 public class ProductController {
 
     private final ProductService productService;
